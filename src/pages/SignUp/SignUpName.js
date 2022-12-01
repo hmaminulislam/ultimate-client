@@ -38,10 +38,10 @@ const SignUpName = ({ page, setPage, formData, setFormData }) => {
       >
         Next Step <FaArrowRight className="ml-3" />
       </button>
-      <div className="mr-20 my-16">
+      <div className="my-16">
         <p className="text-xs text-right">
           Already have an account?{" "}
-          <Link className="text-sm text-primary underline">LOGIN HERE!</Link>
+          <Link to='/login' className="text-sm text-primary underline font-semibold">LOGIN HERE!</Link>
         </p>
       </div>
     </div>
