@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-const SignUpNumber = ({ page, setPage, formData, setFormData }) => {
+const SignUpphone_number = ({ page, setPage, formData, setFormData }) => {
   return (
     <div className="form-container my-8 py-16 px-5 sm:px-8 md:px-16">
       <div className="mb-16">
@@ -10,12 +10,12 @@ const SignUpNumber = ({ page, setPage, formData, setFormData }) => {
         </h4>
       </div>
       <input
-        name="number"
+        name="phone_number"
         type="tel"
         placeholder="+880"
         className="w-full outline-none border-b-2 px-3 mb-16"
-        value={formData.number}
-        onChange={(e) => setFormData({ ...formData, number: e.target.value })}
+        value={formData.phone_number}
+        onChange={(e) => setFormData({ ...formData, phone_number: e.target.value })}
       />
       <input
         name="email"
@@ -51,4 +51,4 @@ const SignUpNumber = ({ page, setPage, formData, setFormData }) => {
   );
 };
 
-export default SignUpNumber;
+export default SignUpphone_number;

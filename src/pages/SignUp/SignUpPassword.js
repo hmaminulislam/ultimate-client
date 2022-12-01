@@ -1,14 +1,29 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const SignUpPassword = ({ page, setPage, formData, setFormData }) => {
     const [error, setError] = useState('')
+    //sign up button handle
     const handleSubmit = () => {
         setError(" ");
         const password = formData.password;
         if (password.length < 8) {
           return setError("Your password must be 8 character");
         }
-         console.log(formData);
+        // signup user api fatch
+         fetch(`https://test.nexisltd.com/signup`, {
+          method: 'POST',
+          headers: {
+            'content-type': 'applicatin/json'
+          },
+          body: JSON.stringify(formData)
+         })
+         .then(res => res.json())
+         .then(data => {
+          if (data.sucess) {
+            toast.success('SignUp successfull')
+          } console.log(data);
+         })
     }
   return (
     <div className="form-container my-8 py-16 px-5 sm:px-8 md:px-16">

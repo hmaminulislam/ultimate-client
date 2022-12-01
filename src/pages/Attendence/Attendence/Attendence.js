@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../../assetes/image/ultimate-logo.png'
 
 const Attendence = () => {
     return (
       <div className="px-5 sm:px-10 md:px-16 mt-10">
-        <img src={logo} alt="" />
+        <Link to="/">
+          <img src={logo} alt="" />
+        </Link>
         <h3 className="text-center text-4xl bg-primary w-[480px] py-5 text-white font-semibold mx-auto">
           Attendance information
         </h3>
@@ -13,7 +16,9 @@ const Attendence = () => {
           <h5 className="text-base font-semibold text-center text-secondary">
             Employee Name
           </h5>
-          <h5 className="text-base font-semibold text-right text-secondary">Status</h5>
+          <h5 className="text-base font-semibold text-right text-secondary">
+            Status
+          </h5>
         </div>
       </div>
     );

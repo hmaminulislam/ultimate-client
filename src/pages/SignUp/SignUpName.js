@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SignUpName = ({ page, setPage, formData, setFormData }) => {
   return (
@@ -15,9 +15,9 @@ const SignUpName = ({ page, setPage, formData, setFormData }) => {
         type="text"
         placeholder="Write First Name"
         className="w-full outline-none border-b-2 px-3 mb-16"
-        value={formData.fristName}
+        value={formData.first_name}
         onChange={(e) =>
-          setFormData({ ...formData, fristName: e.target.value })
+          setFormData({ ...formData, first_name: e.target.value })
         }
       />
       <input
@@ -25,9 +25,9 @@ const SignUpName = ({ page, setPage, formData, setFormData }) => {
         type="text"
         placeholder="Write Last Name"
         className="w-full outline-none border-b-2 px-3 mb-16"
-        value={formData.lastName}
+        value={formData.last_Name}
         onChange={(e) =>
-          setFormData({ ...formData, lastName: e.target.value })
+          setFormData({ ...formData, last_Name: e.target.value })
         }
       />
       <button
@@ -41,7 +41,12 @@ const SignUpName = ({ page, setPage, formData, setFormData }) => {
       <div className="my-16">
         <p className="text-xs text-right">
           Already have an account?{" "}
-          <Link to='/login' className="text-sm text-primary underline font-semibold">LOGIN HERE!</Link>
+          <Link
+            to="/login"
+            className="text-sm text-primary underline font-semibold"
+          >
+            LOGIN HERE!
+          </Link>
         </p>
       </div>
     </div>
