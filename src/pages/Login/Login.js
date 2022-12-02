@@ -1,21 +1,40 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [error, setError] = useState('')
     const handleSubmit = event => {
-        setError('')
-        event.preventDefault()
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        if (password.length < 8) {
-          return setError("Your password must be 8 character");
-        }
-        console.log(email, password)
+      setError("");
+      event.preventDefault();
+      const form = event.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      const userInfo = {
+        email,
+        password
+      }
+      if (password.length < 8) {
+        return setError("Your password must be 8 character");
+      }
+      // login user api fatch
+      fetch(`https://test.nexisltd.com/login`, {
+        method: "POST",
+        headers: {
+          "content-type": "applicatin/json",
+        },
+        body: JSON.stringify(userInfo),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if(data) {
+            localStorage.setItem("access_token", data.access_token);
+          }
+          console.log(data);
+        });
     }
     return (
-      <div className="form-container my-8 py-16 px-5 sm:px-8 md:px-16">
+      <div className="form-container my-8 py-16 px-5 sm:px-8 lg:px-12">
         <form onSubmit={handleSubmit}>
           <div className="mb-16">
             <h4 className="text-xl text-black font-semibold text-center">
@@ -48,10 +67,10 @@ const Login = () => {
           </button>
         </form>
         <div className="my-16">
-          <p className="text-xs text-right">
+          <p className="text-xs text-center sm:text-right">
             Don’t have an account?{" "}
             <Link
-              to="/"
+              to="/signup"
               className="text-sm text-primary underline font-semibold"
             >
               SIGN HERE!

@@ -26,7 +26,7 @@ const SignUpPassword = ({ page, setPage, formData, setFormData }) => {
          })
     }
   return (
-    <div className="form-container my-8 py-16 px-5 sm:px-8 md:px-16">
+    <div className="form-container my-8 py-16 px-5 sm:px-8 lg:px-12">
       <div className="mb-16">
         <h4 className="text-xl text-black font-semibold text-center">
           SignUp Form
@@ -40,9 +40,13 @@ const SignUpPassword = ({ page, setPage, formData, setFormData }) => {
         value={formData.password}
         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
       />
-      { error ? <p className="text-xs mt-2 mb-16 text-error">Your password must be 8 character</p>:
+      {error ? (
+        <p className="text-xs mt-2 mb-16 text-error">
+          Your password must be 8 character
+        </p>
+      ) : (
         <p className="text-xs mt-2 mb-16">Your password must be 8 character</p>
-      }
+      )}
       <div className="flex items-center justify-center">
         <button
           onClick={() => {

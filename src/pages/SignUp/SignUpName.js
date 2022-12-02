@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SignUpName = ({ page, setPage, formData, setFormData }) => {
   return (
-    <div className="form-container my-8 py-16 px-5 sm:px-8 md:px-16">
+    <div className="form-container my-8 py-16 px-5 sm:px-8 lg:px-12">
       <div className="mb-16">
         <h4 className="text-xl text-black font-semibold text-center">
           SignUp Form

@@ -10,7 +10,7 @@ const LeftSidebar = () => {
           <img src={logo} alt="Ultimate logo" />
         </Link>
         <div>
-          <img className="w-[612px] mx-auto" src={banner} alt="Banner" />
+          <img className="lg:w-[612px] w-full mx-auto" src={banner} alt="Banner" />
         </div>
       </div>
     );

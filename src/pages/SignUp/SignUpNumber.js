@@ -3,7 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const SignUpphone_number = ({ page, setPage, formData, setFormData }) => {
   return (
-    <div className="form-container my-8 py-16 px-5 sm:px-8 md:px-16">
+    <div className="form-container my-8 py-16 px-5 sm:px-8 lg:px-12">
       <div className="mb-16">
         <h4 className="text-xl text-black font-semibold text-center">
           SignUp Form
@@ -15,7 +15,9 @@ const SignUpphone_number = ({ page, setPage, formData, setFormData }) => {
         placeholder="+880"
         className="w-full outline-none border-b-2 px-3 mb-16"
         value={formData.phone_number}
-        onChange={(e) => setFormData({ ...formData, phone_number: e.target.value })}
+        onChange={(e) =>
+          setFormData({ ...formData, phone_number: e.target.value })
+        }
       />
       <input
         name="email"
@@ -23,9 +25,7 @@ const SignUpphone_number = ({ page, setPage, formData, setFormData }) => {
         placeholder="Write Email Address"
         className="w-full outline-none border-b-2 px-3 mb-16"
         value={formData.email}
-        onChange={(e) =>
-          setFormData({ ...formData, email: e.target.value })
-        }
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
       />
       <div className="flex items-center justify-center">
         <button
