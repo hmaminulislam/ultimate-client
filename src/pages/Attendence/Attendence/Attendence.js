@@ -7,7 +7,11 @@ const Attendence = () => {
     useEffect( () => {
         fetch(`https://test.nexisltd.com/test`, {
           headers: {
-            Authorization: `bearer ${localStorage.getItem('access_Token')}`,
+            authentication: `${localStorage.getItem("access_token")}`,
+            refresh_token: `bearer ${localStorage.getItem("refresh_token")}`,
+            email: "aminul@gmail.com",
+            frist_name: "aminul",
+            last_Name: "islam",
           },
         })
           .then((res) => res.json())

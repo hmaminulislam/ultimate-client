@@ -29,6 +29,7 @@ const Login = () => {
         .then((data) => {
           if(data) {
             localStorage.setItem("access_token", data.access_token);
+            localStorage.setItem("refresh_token", data.refresh_token);
           }
           console.log(data);
         });
